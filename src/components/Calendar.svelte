@@ -65,3 +65,20 @@
 
 <svelte:window bind:innerWidth on:resize={changeView} />
 <div bind:this={calendarEl} class={classes} {style} />
+
+<style>
+	@media(max-width: 812px) {
+		:global(.fc-header-toolbar) {
+			flex-wrap: wrap;
+		}
+		:global(.fc-toolbar-chunk) {
+			width: 100%;
+			text-align: center;
+			display: inline-flex;
+			justify-content: space-between;
+		}
+		:global(.fc .fc-toolbar-title) {
+			margin: 0 auto;
+		}
+	}
+</style>
