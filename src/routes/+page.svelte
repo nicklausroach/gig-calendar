@@ -22,9 +22,6 @@
     };
     })
 
-    
-
-
   </script>
     <svelte:window bind:innerWidth />    
     <FullCalendar {options} />
