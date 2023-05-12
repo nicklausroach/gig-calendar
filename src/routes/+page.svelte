@@ -13,11 +13,11 @@
         currentView = innerWidth > 812 ? 'dayGridMonth' : 'listWeek'
 
         options = {
-        initialView: currentView,
-        plugins: [listPlugin, dayGridPlugin, googleCalendarPlugin],
-        googleCalendarApiKey: PUBLIC_GOOGLE_CALENDAR_API_KEY,
-        events: {
-            googleCalendarId: PUBLIC_GOOGLE_CALENDAR_ID
+            initialView: currentView,
+            plugins: [listPlugin, dayGridPlugin, googleCalendarPlugin],
+            googleCalendarApiKey: PUBLIC_GOOGLE_CALENDAR_API_KEY,
+            events: {
+                googleCalendarId: PUBLIC_GOOGLE_CALENDAR_ID
         }
     };
     })
@@ -27,6 +27,9 @@
     <FullCalendar {options} />
 
     <style>
+        :root {
+            --fc-today-bg-color: lightblue;
+        }
         :global(html) {
             font-family: Arial, Helvetica, sans-serif;
         }
