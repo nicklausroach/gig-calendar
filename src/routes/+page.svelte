@@ -1,25 +1,17 @@
 <script>
-	import { onMount } from 'svelte';
+    import { onMount } from 'svelte'
     import googleCalendarPlugin from '@fullcalendar/google-calendar';
     import dayGridPlugin from '@fullcalendar/daygrid'
     import listPlugin from '@fullcalendar/list'
     import FullCalendar from '../components/Calendar.svelte';
 	import { PUBLIC_GOOGLE_CALENDAR_API_KEY, PUBLIC_GOOGLE_CALENDAR_ID } from '$env/static/public';
 
-    $: innerWidth = 0
-    let currentView = innerWidth > 812 ? 'dayGridMonth' : 'listWeek'
-
+    let currentView;
+    let innerWidth;
     onMount(() => {
-		function onResize() {
-            console.log(innerWidth)
-            if (innerWidth <= 812) {
-                currentView = 'listWeek'
-            }
-		}
-		window.addEventListener('resize', onResize);
-		return () => window.removeEventListener('resize', onResize);
-	});
-  
+        currentView = innerWidth > 812 ? 'dayGridMonth' : 'listWeek'
+    })
+
     $: options = {
         initialView: currentView,
         plugins: [listPlugin, dayGridPlugin, googleCalendarPlugin],
@@ -31,10 +23,11 @@
 
 
   </script>
-  <FullCalendar {options} />
+    <svelte:window bind:innerWidth />    
+    <FullCalendar {options} />
 
-  <style>
-    :global(html) {
-        font-family: Arial, Helvetica, sans-serif;
-    }
-  </style>
+    <style>
+        :global(html) {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
