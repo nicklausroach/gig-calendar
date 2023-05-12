@@ -30,6 +30,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fullcalendar/list": "^6.1.7",
 		"@sveltejs/adapter-static": "^2.0.2"
 	}
 }
