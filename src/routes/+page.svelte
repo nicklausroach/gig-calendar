@@ -8,11 +8,11 @@
 
     let currentView;
     let innerWidth;
+    let options;
     onMount(() => {
         currentView = innerWidth > 812 ? 'dayGridMonth' : 'listWeek'
-    })
 
-    $: options = {
+        options = {
         initialView: currentView,
         plugins: [listPlugin, dayGridPlugin, googleCalendarPlugin],
         googleCalendarApiKey: PUBLIC_GOOGLE_CALENDAR_API_KEY,
@@ -20,6 +20,9 @@
             googleCalendarId: PUBLIC_GOOGLE_CALENDAR_ID
         }
     };
+    })
+
+    
 
 
   </script>
