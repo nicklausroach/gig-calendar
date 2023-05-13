@@ -67,6 +67,12 @@
 <div bind:this={calendarEl} class={classes} {style} />
 
 <style>
+	:global(.fc-toolbar-chunk) {
+		margin: 10px;
+	}
+	:global(.fc-listWeek-view) {
+		display: contents;
+	}
 	@media(max-width: 812px) {
 		:global(.fc-header-toolbar) {
 			flex-wrap: wrap;
